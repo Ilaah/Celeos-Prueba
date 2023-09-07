@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/* CONFIGURACIONES GENERALES */
+:root {
+  font-size: calc(11px + 1vw);
+
+  --base-orange: rgb(255, 129, 0);
+  --base-blue: rgb(30, 54, 101);
+  --base-blue-text: rgb(29, 59, 81);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--base-blue-text);
+  font-weight: 500;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+a,
+span {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  font-size: clamp(0.5rem, 1.5rem, 2rem);
+}
+
+button {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.white {
+  color: white;
+}
+
+/* HEADER */
+.header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 3rem;
+}
+
+.header-nav__logo {
+  height: 1.8rem;
+  height: 70%;
+}
+
+.header-nav__right {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-nav__button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--base-orange);
+  height: 1.5rem;
+}
+
+.header-nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* CUERPO DE LA PÁGINA */
+
+/* CARDS CON SUPERPOSICIÓN */
+.card__img,
+.card-overlay-container {
+  width: 100%;
+  height: 35vh;
+  position: relative;
+}
+
+.card__img img,
+.card-overlay-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-overlay,
+.card-overlay--bg-blue {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0 1rem;
+  justify-content: center;
+}
+
+.card-overlay--bg-blue {
+  background-color: rgba(30, 54, 101, 0.9);
+}
+
+.card-overlay__segment {
+  display: flex;
+  height: 25%;
+  width: 100%;
+}
+
+.card-overlay__segment:nth-child(1) {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-overlay__segment:nth-child(2) {
+  justify-content: end;
+}
+
+.card-overlay__segment:nth-child(3) {
+  margin-top: auto;
+  justify-content: center;
+  align-items: end;
+}
+
+.card-overlay__segment--line {
+  width: 25%;
+  height: 2px;
+  border-radius: 10px;
+  margin-top: 3px;
+  background-color: var(--base-blue);
+}
+
+.card-overlay_segment_text {
+  max-width: 61%;
+}
+
+.card-overlay_segment_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: none;
+}
+
+.card-overlay_segment_symptom {
+  justify-content: end;
+}
+
+.card-overlay_segment_symptom,
+.info__list-element {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+}
+
+.card-overlay_segment_symptom img,
+.info__list-element img {
+  width: 2rem;
+}
+
+.card-overlay_segment_span {
+  padding: 0.5rem;
+  background-color: var(--base-blue);
+  border-radius: 10px 10px 0 0;
+}
+
+.card-overlay__info {
+  text-align: justify;
+  padding: 1rem 0;
+}
+
+/* INFORMACIÓN */
+.info--justify,
+.info--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 0.7rem;
+}
+
+.info--justify {
+  text-align: justify;
+}
+
+.info--center {
+  text-align: center;
+}
+
+.info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* CARDS NORMALES */
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.card__span {
+  display: flex;
+  position: absolute;
+  top: 32vh;
+  right: 44%;
+  padding: 10px 12px;
+  border-radius: 50px;
+  background-color: var(--base-blue);
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card_info_list {
+  width: 100%;
+  text-align: start;
+}
+
+/* CONCLUSIÓN */
+.conclusion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem;
+}
+
+.conclusion span {
+  width: 40%;
+  height: 2px;
+  background-color: var(--base-blue);
+  border-radius: 10px;
+}
+
+.conclusion__img {
+  width: 100%;
+}
+
+.conclusion__img--warning {
+  width: 15%;
+}
+
+.conclusion__img--warning img,
+.conclusion__img img {
+  width: 100%;
+}
+
+/* FOOTER */
+.site-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--base-blue);
+  width: 100%;
+  height: 2rem;
+  padding: 2rem;
+}
+
+.footer__contact {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer__contact-icon {
+  padding: 10px 12px;
+  background-color: transparent;
+  border: 0.5px solid;
+  border-radius: 50px;
+}
+
+/* ESTILOS PARA TABLET */
+@media (min-width: 768px) {
+  .p-desk {
+    padding: 1rem 3rem;
+  }
+
+  .card-overlay-container {
+    height: 40vh;
+  }
+
+  .info__list--desk {
+    width: 70%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex-direction: initial;
+    justify-content: center;
+  }
+
+  .info__list--desk li {
+    width: 45%;
+    padding: 0.5rem;
+    border: 0.5px solid;
+    border-radius: 25px;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .card {
+    width: calc(50% - 1rem);
+    padding: 1rem;
+    box-shadow: 0px 3px 20px -5px;
+  }
+
+  .card__span {
+    display: none;
+  }
+
+  .card__info {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  .card__info::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .card__info::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 202, 202);
+  }
+
+  /* La última tarjeta de cada fila no debe tener margen derecho */
+  .card:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p,
+  li {
+    font-size: 0.9rem;
+  }
+
+  .conclusion__img__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .conclusion__img {
+    width: 50%;
+  }
+}
+
+/* ESTILOS PARA DESKTOP */
+@media (min-width: 1024px) {
+  .card-overlay-container {
+    height: 45vh;
+  }
+
+  .card {
+    width: calc(33.33% - 1rem);
+  }
+
+  .conclusion__img__container {
+    gap: 2rem;
+  }
+
+  .conclusion__img {
+    width: 40%;
+  }
+}
